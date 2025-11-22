@@ -3,9 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    hello
+
+    <header>
+        <div class="brand-section">
+            <h1>Student Management System</h1>
+            <p>Manage student registrations and records efficiently</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Students</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        
+    <section class="form-container">
+    <div class="form-card">
+    <h2 class="section-title">Add New Student</h2>
+    <form action="#" method="POST">
+                    
+    <div class="form-group">
+    <label class="form-label">Student ID <span class="required">*</span></label>
+                        <input type="text" placeholder="e.g., STU2024001" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address <span class="required">*</span></label>
+                        <input type="email" placeholder="student@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number <span class="required">*</span></label>
+                        <input type="tel" placeholder="+1 (555) 000-0000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Date of Birth <span class="required">*</span></label>
+                        <input type="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Gender <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="male"> Male
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="female"> Female
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="other"> Other
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Select Course <span class="required">*</span></label>
+                        <select required>
+                            <option value="" disabled selected>-- Choose a course --</option>
+                            <option value="cs">Computer Science</option>
+                            <option value="ba">Business Administration</option>
+                            <option value="eng">Engineering</option>
+                            <option value="med">Medicine</option>
+                            <option value="arts">Arts & Humanities</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Academic Year <span class="required">*</span></label>
+                        <input type="number" min="1" max="4" placeholder="1-4" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Additional Services</label>
+                        <div class="checkbox-group">
+                            <label class="check-option">
+                                <input type="checkbox" name="hostel"> Hostel
+                            </label>
+                            <label class="check-option">
+                                <input type="checkbox" name="transport"> Transport
+                            </label>
+                            <label class="check-option">
+                                <input type="checkbox" name="library"> Library
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">Register Student</button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="table-container">
+            <div class="table-card">
+                <div class="table-header-row">
+                    <h2 class="section-title" style="margin-bottom: 0; border: none;">Registered Students</h2>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search students...">
+                    </div>
+                </div>
+
+                <div class="data-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID <i class="fas fa-sort"></i></th>
+                                <th>Name <i class="fas fa-sort"></i></th>
+                                <th>Course <i class="fas fa-sort"></i></th>
+                                <th>Year <i class="fas fa-sort"></i></th>
+                                <th>Email</th>
+                                <th>Status <i class="fas fa-sort"></i></th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>STU2024001</td>
+                                <td>Jayanth</td>
+                                <td>Computer Science</td>
+                                <td>3</td>
+                                <td>jayanth@gmail.com</td>
+                                <td><span class="badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit">Edit</button>
+                                    <button class="action-btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>STU2024002</td>
+                                <td>LIKITH</td>
+                                <td>Business Admin</td>
+                                <td>2</td>
+                                <td>likith@gmail.com</td>
+                                <td><span class="badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit">Edit</button>
+                                    <button class="action-btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>STU2024003</td>
+                                <td>rohan</td>
+                                <td>Engineering</td>
+                                <td>4</td>
+                                <td>rohan@gmail.com</td>
+                                <td><span class="badge status-pending">Pending</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit">Edit</button>
+                                    <button class="action-btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>STU2024004</td>
+                                <td>koti</td>
+                                <td>Medicine</td>
+                                <td>1</td>
+                                <td>koti@gmail.com</td>
+                                <td><span class="badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit">Edit</button>
+                                    <button class="action-btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>STU2024005</td>
+                                <td>sivamani</td>
+                                <td>Arts & Humanities</td>
+                                <td>2</td>
+                                <td>sivamani@gmail.com</td>
+                                <td><span class="badge status-inactive">Inactive</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit">Edit</button>
+                                    <button class="action-btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>STU2024006</td>
+                                <td>jyothika</td>
+                                <td>Computer Science</td>
+                                <td>3</td>
+                                <td>jyothika@gmail.com</td>
+                                <td><span class="badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit">Edit</button>
+                                    <button class="action-btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>STU2024007</td>
+                                <td>dhanush</td>
+                                <td>Engineering</td>
+                                <td>1</td>
+                                <td>dhanush@gmail.com</td>
+                                <td><span class="badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit">Edit</button>
+                                    <button class="action-btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>STU2024008</td>
+                                <td>siki</td>
+                                <td>Business Admin</td>
+                                <td>4</td>
+                                <td>siki@gmail.com</td>
+                                <td><span class="badge status-pending">Pending</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit">Edit</button>
+                                    <button class="action-btn btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="page-btn">« Previous</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">Next »</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>About EduAdmin</h3>
+                <p>We provide state-of-the-art management solutions for educational institutions, streamlining administration and student services.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Examinations</a></li>
+                    <li><a href="#">Staff Portal</a></li>
+                    <li><a href="#">Alumni</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Student Handbook</a></li>
+                    <li><a href="#">Academic Calendar</a></li>
+                    <li><a href="#">Library Catalog</a></li>
+                    <li><a href="#">IT Support</a></li>
+                    <li><a href="#">Campus Map</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> support@eduadmin.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 University Ave, Tech City, CA 90210</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2024 EduAdmin Pro. All rights reserved.
+        </div>
+    </footer>
 </body>
 </html>
